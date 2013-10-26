@@ -1,0 +1,102 @@
+# result strings
+r_sec_cs_conf_hl=Konfigurierte sichere Kryptoalgorithmen:
+r_sec_cs_conf=\  {0} (sicher)
+r_unknown_cs_conf_hl=Kryptoalgorithmen unbekannter Sicherheit:
+r_unknown_cs_conf=\  {0} (unkannte Sicherheit)
+r_insec_cs_conf_hl=Konfigurierte unsichere Kryptoalgorithmen:
+r_insec_cs_conf=\  {0} (unsicher)
+r_secure=sicher
+r_unkown=unbekannte Sicherheit
+r_insecure=unsicher
+r_proto_details=Unterstützte Handshake-Protokolle:
+r_proto_conf=\  {0} ({1})
+r_ssl2_behavior=Verhalten bei SSLv2: {0}.
+r_ssl2_unknown=Unbekannt
+r_ssl2_close=Verbindung beendet.
+r_ssl2_nocipher=Leere Liste der Kryptoalgorithmen.
+r_ssl2_error=SSL-Fehlermeldung.
+r_ssl2_reset=Connection reset
+r_ssl2_implerror=Fehler in Protokoll(-Implementierung)
+r_ssl2_cs_conf=Konfigurierte SSLv2-Kryptoalgorithmen:
+r_ssl2_cs_conf_detail=\  {0} (unsicheres Handshake-Protokoll)
+r_cert_alg={2} {0} {1}
+r_cert_selfsig=(selbstsigniert)
+r_cert_same=(auch Aussteller)
+r_cert_subj={2}   Inhaber    : {0} {1}
+r_cert_issuer={1}   Aussteller : {0}
+r_cert_sigalg={1}   Signaturalgorithmus: {0}
+r_cert_from={1}   Gültig von {0}
+r_cert_until={1}          bis {0}
+# result summary strings
+r_no_cs=Gar keine Kryptoalgorithmen unterstützt. Bietet {0}:{1} \
+             überhaupt SSL/TLS?
+r_cs_ok=Konfiguration der Kryptoalgorithmen OK.
+r_cs_insec=Konfiguration der Kryptoalgorithmen ist unsicher: Unsichere \
+              Kryptoalgorithmen unterstützt.
+r_cs_nosec=Konfiguration der Kryptoalgorithmen ist unsicher: Keine \
+              sicheren Kryptoalgorithmen unterstützt.
+r_hint=Hinweis: Kryptoalgorithmen unbekannter Sicherheit unterstützt. \
+              Für weitere Details bitte die Option -v verwenden und einen \
+              Krypto-Experten zu Rate ziehen.
+r_handshake_insec=Konfiguration der Handshake-Protokolle unsicher: SSLv2 \
+              wird unterstüzt.
+r_handshake_sec=Konfiguration der Handshake-Protokolle OK: SSLv2 \
+              abgeschaltet.
+r_no_ssl=Keine SSL/TLS-Unterstützung auf {0}:{1}.
+r_cert_valid=Zertifikatskette verifiziert gegen bekannte Wurzel-Zertifikate.
+r_cert_invalid=Zertifikatskette kann nicht gegen bekannte Wurzel-Zertifikate\
+                verifiziert werden.
+r_cert_match=Zertifikats-Name stimmt.
+r_cert_CN_match=Zertifikats-CN stimmt überein.
+r_cert_alt_match=Zertifikats-"subject alternative name" stimmt überein.
+r_cert_mismatch=Zertifikats-Name stimmt nicht.
+r_subalt_names=Subject alternative names gefunden:
+r_altname=\  {0}
+r_not_cert_x509=#{0} ist kein X509-Zertifikat.
+r_probe_summary={0};{1};{2};{3}
+r_checkres_support=SSL vorhanden
+r_checkres_unknown=Unbekannt
+r_checkres_nosupport=SSL nicht vorhanden
+# splash strings
+s_prompt_check=Hostname;Port;Ergebnis;Zeitpunkt
+s_running=Analysiere {0}:{1}
+s_dateformat=yyyy-MM-dd HH:mm:ss
+s_collection_done=Datensammlung fertig um {0}
+s_init=Nutze Initialisierungsfunktion "{0}"
+s_certchain=Zertifikatskette:
+s_usage=Konfigurations-Analysierer für SSL, Version {0}\n\
+Nutzung:\n\
+java -jar sslanalyser-{0}.jar [Optionen] <Server> [<Port>]\n\
+\  mit den Optionen:\n\
+\  -v         Ausführliche Ausgabe\n\
+\  -m         Berechnung des Hashwerts nur über den Modulus (anstatt über\n\
+\             Schlüsseldaten), kompatibel zur openssl-vulnkey Datenbank\n\
+\             der Debian-Distribution (entspricht rechter Hash-Hälfte)\n\
+\  -V, -h, -? Diese Anleitung\n\
+\  -c         Nur Prüfung, ob SSL überhaupt unterstützt ist\n\
+\  -p <proto> Unterstützung für Protokoll <proto>. Unterstützte Protokolle\n\
+\             für <proto> sind: plain, smtp, pop3\n\
+\             (Für einfaches (plain) ssl, starttls bei SMTP, stls bei POP3)\n\
+\  -P <proxy>:<port>[:<uid>:<pw>] HTTP Proxy auf <host> bei Port <port>\n\
+\                  mit optionaler "Basic Authentication" mittels Kennung \n\
+\                  <uid> und Passwort <pw>\n
+# Errors and exceptions
+e_port_num=Port {0} muss eine Zahl sein.
+e_proxy_port_num=Proxy-Port {0} muss eine Zahl sein.
+e_conn_err=Verbindung fehlgeschlagen {0}
+e_conn_timeout=Zeitüberschreitung in Verbindung: {0}
+e_no_pop3=Kein POP3-Server
+e_capa_failed=POP3-Kommando CAPA fehlgeschlagen
+e_no_starttls=Kein StartTLS unterstützt
+e_starttls_failed=StartTLS-Kommando fehlgeschlagen
+e_no_esmtp=Kein ESMTP mit SSL/TLS-Unterstützung
+e_smtp_failed=Handshake bei SMTP fehlgeschlagen
+e_starttls_code=STARTTLS-Kommando fehlgeschlagen mit Ergebniscode {0}
+e_unsupp_proto=Protocoll {0} nicht unterstützt
+e_no_java_ssl=Keine SSL-Unterstützung im Java vorhanden!?
+e_trustmanager=Kein passender Trustmanager gefunden.
+e_certparse_subjaltname=Fehler beim Parsen des Zertifikates bei der Suche\
+                 nach Subject Alternative Names
+e_debug_level=Debug-Level {0} muss eine Zahl sein.
+# debug messages
+d_testprop=äöü

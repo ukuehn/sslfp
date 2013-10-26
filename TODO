@@ -1,0 +1,27 @@
+Things that are still to do for sslanalyser:
+
+- Test imap support more thoroughly
+
+- Test with client certificates. This might already work with standard
+  java mechanisms like -Djavax.ssl.keystore=..., but is completely untested
+  yet.
+
+- Implement a mode where Kerberos authentication is tested/supported.
+
+- Have a mode where also the rejected ciphers are reported, so the user
+  is able to tell how full the test was.
+
+- Fix umlaut problem under windows. I18N here has property files
+  encoded in utf-8 and uses native2ascii to convert non-ascii into
+  respective character sequences. However, apparenty under Windows,
+  at least the umlauts get garbled.
+  So far, the german language file exists (probably out of sync with
+  the english version), but is disabled.
+
+- Try to determine port number from a service name.
+
+- At least for HTTPS, try to retrieve some page on the server in order
+  to distinguish if the server delivers a different service depending on
+  the handshake protocol and ciphersuite.
+
+

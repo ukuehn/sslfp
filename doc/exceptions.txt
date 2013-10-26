@@ -1,0 +1,58 @@
+
+
+Exception
+- FingerPrintError
+  - InstallationError
+  - HttpProxyError
+- FingerPrintException
+  - NoSSLException
+  - InitialiserException
+    - NoStartTlsException
+  - HttpProxyIOException
+
+  - SSLv2HandshakeException
+  - SSLv2ProtoException
+  - SSLv2NoCipherException
+  - SSLv2ResetException
+  - SSLv2CloseException
+
+
+
+installation errors:
+NoSuchAlgorithmException
+KeyManagementException
+IllegalArgumentException (on setEnableProtocols)
+
+
+general errors (no info on ssl support):
+Normal network errors like port / host unreachable
+other IO errors
+
+HTTP Proxy problems: error messages, no connections (recoverable for
+mass scanning)
+
+HTTP Proxy problems: no credentials (fatal!)
+
+with info on ssl support:
+
+General during initial connect (still without ssl):
+Connection reset
+Timeout
+
+No StartTLS command
+
+
+SSLv2:
+Connection reset
+Socket closed
+Empty list of cipher suites
+SSL error message = handshake error?
+
+
+
+SSLv3/TLS:
+SSL handshake error
+Socket closed ?
+Connection reset ?
+SSL error message = ssl handshake error ?
+

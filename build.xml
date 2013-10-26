@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<project name="SSLFingerPrint" default="jar" basedir=".">
+
+  <property name="version" value="0.9.7"/>
+
+<!-- run native2ascii on the properties files, as these are expected
+  in iso-8859-1 encoding, but we are using utf-8 -->
+  <target name="prepare">
+    <mkdir dir="build"/>
+    <native2ascii
+	  encoding="UTF-8"
+	  src="src"
+	  dest="build"
+	  includes="**/*.properties"/>
+  </target>
+
+  <target name="compile" depends="prepare">
+    <javac
+      debug="on"
+      target="1.5"
+      source="1.5"
+      deprecation="on"
+      srcdir="src"
+      destdir="build"
+      />
+  </target>
+    
+  <target name="jar" depends="compile">
+    <manifest file="build/MANIFEST.MF">
+      <attribute name="Main-Class"
+        value="net.ukuehn.sslfingerprint.SSLFingerprintMain"
+        />
+    </manifest>
+    <jar
+      jarfile="sslfp.jar"
+      basedir="build"
+      excludes="MANIFEST.MF"
+      manifest="build/MANIFEST.MF"
+      />
+<!--    <jar
+      jarfile="sslfp-${version}.jar"
+      basedir="build"
+      excludes="MANIFEST.MF"
+      manifest="build/MANIFEST.MF"
+      />-->
+  </target>
+
+  <target name="src-dist">
+      <zip destfile="sslfp-${version}-src.zip">
+	<zipfileset
+	  prefix="sslfp-${version}"
+	  dir="."
+	  >
+	  <include name="src/**/*.java"/>
+	  <include name="src/**/*.properties*"/>
+	  <include name="build.xml"/>
+	  <include name="Changelog"/>
+	  <include name="TODO"/>
+	  <include name="LICENSE"/>
+	</zipfileset>
+      </zip>
+  </target>
+
+
+  <target name="clean">
+    <delete dir="build"/>
+  </target>
+
+</project>
