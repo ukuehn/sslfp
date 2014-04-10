@@ -194,6 +194,14 @@ public class XMLProbePublisher extends Publisher {
 			// 
 		}
 		xw.attribute("SelfSigned", String.valueOf(selfSigned));
+		if (verbLevel > 1) {
+			xw.attribute("Subject", subjDN);
+			xw.attribute("Issuer", issuerDN);
+			xw.attribute("ValidFrom",
+				     cert.getNotBefore().toString());
+			xw.attribute("ValidUntil",
+				     cert.getNotAfter().toString());
+		}
 		xw.endElement(); // </CertDetails>
 	}
 
