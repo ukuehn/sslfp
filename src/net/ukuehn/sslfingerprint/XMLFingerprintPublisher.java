@@ -321,7 +321,7 @@ public class XMLFingerprintPublisher extends ClassifyingPublisher {
 		xw.attribute("SelfSigned", String.valueOf(selfSigned));
 		if (verbLevel > 1) {
 			xw.attribute("Subject", subjDN);
-			xw.attribute("Issuer", subjDN);
+			xw.attribute("Issuer", issuerDN);
 			xw.attribute("ValidFrom",
 				     cert.getNotBefore().toString());
 			xw.attribute("ValidUntil",
