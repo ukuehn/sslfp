@@ -49,7 +49,7 @@ import net.ukuehn.security.CertValidator;
 public class SSLFingerprintMain {
 
 	static final String progname="SSLFingerprint";
-	static final String version = "0.9.7";
+	static final String version = "0.9.7a";
 	static final String prompt = progname+" v"+version
 		+" by Ulrich Kuehn <ukuehn@acm.org>";
 	

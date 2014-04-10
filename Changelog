@@ -1,4 +1,12 @@
 
+sslfp 0.9.7a
+
+	Bug fix in XMLFingerprintPublisher. Add output of certificate's
+	subject and issuer DN in probe mode.
+	
+	-- Ulrich Kuehn <ukuehn@acm.org> 2014-04-10
+
+
 sslfp 0.9.7
 
 	First released version.
